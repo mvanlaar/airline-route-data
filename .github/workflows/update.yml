@@ -17,7 +17,7 @@ jobs:
         run: |
           uv run --python 3.10 --with-requirements requirements.txt -- python -u scrape_airline_routes.py
 
-          git config --global user.email "bot@jonty.co.uk"
+          git config --global user.email "bot@mvanlaar.net"
           git config --global user.name "Airline Route Update GHA"
 
           git add airline_routes.json
