@@ -21,7 +21,7 @@ async def get_cf_clearance() -> tuple[str, str]:
       - User-Agent string (must match the one used by the browser)
     """
     print("Launching browser to solve Cloudflare challenge...")
-    browser = await uc.start(headless=True)
+    browser = await uc.start(headless=True, no_sandbox=True)
     try:
         page = await browser.get(BASE_URL)
 
