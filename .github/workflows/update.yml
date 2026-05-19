@@ -13,6 +13,10 @@ jobs:
           persist-credentials: false
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+      - name: Install Chromium
+        run: |
+          apt-get update && apt-get install -y chromium-browser
+          export CHROMIUM_PATH=$(which chromium-browser)
       - name: Scrape and commit
         run: |
           uv run --python 3.10 --with-requirements requirements.txt -- python -u scrape_airline_routes.py
