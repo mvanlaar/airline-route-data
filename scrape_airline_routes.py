@@ -27,7 +27,7 @@ if __name__ == "__main__":
         print("Failed to load airport JSON, page body was: '%s'" % response.content)
         sys.exit(1)
 
-    iatas = [airport["IATA"] for airport in airports_json["response"]["airports"]]
+    iatas = [airport["IATA"] for airport in airports_json["response"]["airports"]] if airport["country_code"] == "CO"]
 
     airports = defaultdict(dict)
 
